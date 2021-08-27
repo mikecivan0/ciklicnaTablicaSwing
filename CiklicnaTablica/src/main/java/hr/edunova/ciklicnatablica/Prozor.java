@@ -5,6 +5,7 @@
  */
 package hr.edunova.ciklicnatablica;
 
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -17,7 +18,6 @@ public class Prozor extends javax.swing.JFrame {
      */
     public Prozor() {
         initComponents();
-        this.setLayout(null);
     }
 
     /**
@@ -29,8 +29,6 @@ public class Prozor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnlNaslov = new javax.swing.JPanel();
-        lblNaslov = new javax.swing.JLabel();
         pnlUnosi = new javax.swing.JPanel();
         txtBrojStupaca = new javax.swing.JTextField();
         txtBrojRedova = new javax.swing.JTextField();
@@ -41,36 +39,27 @@ public class Prozor extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         cbSmjer = new javax.swing.JComboBox<>();
         cbPocetnaPozicija = new javax.swing.JComboBox<>();
+        lblPoruka = new javax.swing.JLabel();
+        lblNaslov = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ispis ciklične tablice");
-        setMinimumSize(new java.awt.Dimension(700, 600));
-        setPreferredSize(new java.awt.Dimension(700, 600));
+        setMinimumSize(new java.awt.Dimension(712, 308));
+        setPreferredSize(new java.awt.Dimension(712, 308));
         setResizable(false);
-        setSize(new java.awt.Dimension(700, 600));
+        setSize(new java.awt.Dimension(712, 308));
 
-        pnlNaslov.setForeground(new java.awt.Color(51, 51, 255));
-        pnlNaslov.setToolTipText("");
+        txtBrojStupaca.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBrojStupacaKeyPressed(evt);
+            }
+        });
 
-        lblNaslov.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
-        lblNaslov.setText("Ispis ciklične tablice");
-        lblNaslov.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout pnlNaslovLayout = new javax.swing.GroupLayout(pnlNaslov);
-        pnlNaslov.setLayout(pnlNaslovLayout);
-        pnlNaslovLayout.setHorizontalGroup(
-            pnlNaslovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlNaslovLayout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addComponent(lblNaslov, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        pnlNaslovLayout.setVerticalGroup(
-            pnlNaslovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlNaslovLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblNaslov, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        txtBrojRedova.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBrojRedovaKeyPressed(evt);
+            }
+        });
 
         btnGeneriraj.setText("Generiraj tablicu");
         btnGeneriraj.addActionListener(new java.awt.event.ActionListener() {
@@ -79,44 +68,57 @@ public class Prozor extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Broj redova");
+        jLabel1.setText("Broj redova(2 ili više)");
 
-        jLabel2.setText("Broj supaca");
+        jLabel2.setText("Broj supaca(2 ili više)");
 
         jLabel3.setText("Smjer ispisa");
 
         jLabel4.setText("Pozicija početka ispisa");
 
         cbSmjer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Smjer kazaljke na satu", "Suprotno od kazaljke na satu" }));
+        cbSmjer.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cbSmjerKeyPressed(evt);
+            }
+        });
 
         cbPocetnaPozicija.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gore lijevo", "Gore desno", "Dolje lijevo", "Dolje desno" }));
+        cbPocetnaPozicija.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cbPocetnaPozicijaKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlUnosiLayout = new javax.swing.GroupLayout(pnlUnosi);
         pnlUnosi.setLayout(pnlUnosiLayout);
         pnlUnosiLayout.setHorizontalGroup(
             pnlUnosiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlUnosiLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addGroup(pnlUnosiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(txtBrojRedova, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlUnosiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                    .addComponent(txtBrojStupaca))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlUnosiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cbSmjer, 0, 208, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlUnosiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbPocetnaPozicija, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(pnlUnosiLayout.createSequentialGroup()
-                .addGap(199, 199, 199)
+                    .addComponent(lblPoruka, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlUnosiLayout.createSequentialGroup()
+                        .addGroup(pnlUnosiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                            .addComponent(txtBrojRedova, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlUnosiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtBrojStupaca)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlUnosiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cbSmjer, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlUnosiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbPocetnaPozicija, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(26, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlUnosiLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnGeneriraj, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(247, 247, 247))
         );
         pnlUnosiLayout.setVerticalGroup(
             pnlUnosiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,10 +135,18 @@ public class Prozor extends javax.swing.JFrame {
                     .addComponent(txtBrojRedova, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbSmjer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbPocetnaPozicija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
+                .addGap(52, 52, 52)
                 .addComponent(btnGeneriraj)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblPoruka, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
         );
+
+        lblNaslov.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        lblNaslov.setForeground(new java.awt.Color(51, 51, 0));
+        lblNaslov.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNaslov.setText("Ispis ciklične tablice");
+        lblNaslov.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,37 +155,91 @@ public class Prozor extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlNaslov, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlUnosi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pnlUnosi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblNaslov, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlNaslov, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pnlUnosi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lblNaslov, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlUnosi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cbPocetnaPozicijaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbPocetnaPozicijaKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER
+            || evt.getKeyCode() == KeyEvent.VK_SPACE) {
+            btnGenerirajActionPerformed(null);
+        }
+    }//GEN-LAST:event_cbPocetnaPozicijaKeyPressed
+
+    private void cbSmjerKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbSmjerKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER
+            || evt.getKeyCode() == KeyEvent.VK_SPACE) {
+            cbPocetnaPozicija.showPopup();
+            cbPocetnaPozicija.requestFocus();
+        }
+    }//GEN-LAST:event_cbSmjerKeyPressed
+
     private void btnGenerirajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerirajActionPerformed
-        Tablica tablica = new Tablica(
-                Integer.parseInt(txtBrojRedova.getText()), 
-                Integer.parseInt(txtBrojStupaca.getText()),
-                cbSmjer.getSelectedIndex(),
-                cbPocetnaPozicija.getSelectedIndex());
-        tablica.kreirajTablicu();
+        if (txtBrojRedova.getText().length() > 0
+            && txtBrojStupaca.getText().length() > 0) {
+            int brojRedova = 0, brojStupaca = 0;
+            try {
+                brojRedova = Integer.parseInt(txtBrojRedova.getText());
+                brojStupaca = Integer.parseInt(txtBrojStupaca.getText());
+                if(brojRedova>=2 && brojStupaca>=2){
+                    lblPoruka.setText("");
+                    Tablica tablica = new Tablica(
+                        brojRedova,
+                        brojStupaca,
+                        cbSmjer.getSelectedIndex(),
+                        cbPocetnaPozicija.getSelectedIndex());
+                    tablica.kreirajTablicu();
+                }else{
+                    lblPoruka.setText("I broj redova i broj stupaca moraju biti "
+                        + "veći od 2");
+                }
+            } catch (NumberFormatException e) {
+                lblPoruka.setText("Pri unosu broja redova "
+                    + "i broja stupaca dopušteni su samo brojevi");
+            }
+        } else {
+            lblPoruka.setText("Obavezno unesite i broj redova i broj stupaca");
+        }
+
     }//GEN-LAST:event_btnGenerirajActionPerformed
+
+    private void txtBrojRedovaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBrojRedovaKeyPressed
+        if (txtBrojRedova.getText().length() > 0
+            && txtBrojStupaca.getText().length() > 0) {
+            lblPoruka.setText("");
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtBrojStupaca.requestFocus();
+        }
+    }//GEN-LAST:event_txtBrojRedovaKeyPressed
+
+    private void txtBrojStupacaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBrojStupacaKeyPressed
+        if (txtBrojRedova.getText().length() > 0
+            && txtBrojStupaca.getText().length() > 0) {
+            lblPoruka.setText("");
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            cbSmjer.showPopup();
+            cbSmjer.requestFocus();
+        }
+    }//GEN-LAST:event_txtBrojStupacaKeyPressed
 
     /**
      * @param args the command line arguments
      */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGeneriraj;
@@ -186,7 +250,7 @@ public class Prozor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblNaslov;
-    private javax.swing.JPanel pnlNaslov;
+    private javax.swing.JLabel lblPoruka;
     private javax.swing.JPanel pnlUnosi;
     private javax.swing.JTextField txtBrojRedova;
     private javax.swing.JTextField txtBrojStupaca;
