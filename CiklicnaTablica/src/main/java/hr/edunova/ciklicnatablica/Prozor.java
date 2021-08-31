@@ -18,6 +18,7 @@ public class Prozor extends javax.swing.JFrame {
      */
     public Prozor() {
         initComponents();
+        ucitajPostavke();
     }
 
     /**
@@ -45,16 +46,25 @@ public class Prozor extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ispis ciklične tablice");
         setMinimumSize(new java.awt.Dimension(712, 308));
-        setPreferredSize(new java.awt.Dimension(712, 308));
         setResizable(false);
         setSize(new java.awt.Dimension(712, 308));
 
+        txtBrojStupaca.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtBrojStupacaFocusGained(evt);
+            }
+        });
         txtBrojStupaca.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtBrojStupacaKeyPressed(evt);
             }
         });
 
+        txtBrojRedova.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtBrojRedovaFocusGained(evt);
+            }
+        });
         txtBrojRedova.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtBrojRedovaKeyPressed(evt);
@@ -223,6 +233,7 @@ public class Prozor extends javax.swing.JFrame {
         }
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             txtBrojStupaca.requestFocus();
+            txtBrojStupaca.selectAll();
         }
     }//GEN-LAST:event_txtBrojRedovaKeyPressed
 
@@ -237,6 +248,19 @@ public class Prozor extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtBrojStupacaKeyPressed
 
+    private void txtBrojRedovaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBrojRedovaFocusGained
+        // TODO add your handling code here:
+        txtBrojRedova.selectAll();
+    }//GEN-LAST:event_txtBrojRedovaFocusGained
+
+    private void txtBrojStupacaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBrojStupacaFocusGained
+        // TODO add your handling code here:
+        txtBrojStupaca.selectAll();
+    }//GEN-LAST:event_txtBrojStupacaFocusGained
+
+    private void ucitajPostavke(){
+        setLayout(null);
+    }
     /**
      * @param args the command line arguments
      */
